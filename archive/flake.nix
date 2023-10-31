@@ -20,7 +20,9 @@
       # Configuration for dev-config
       "dev-config" = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        specialArgs = inputs;
+        specialArgs = {
+          inherit inputs;
+        };
         modules = [
           ./configuration.nix
 
